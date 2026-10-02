@@ -225,7 +225,7 @@ CAPSTONE_SECRET_123456789
 Reading through the normal device interface returns the original plaintext after transparent decryption. The raw backing storage, however, holds ciphertext. During development, the backing buffer can be inspected through debugfs:
 
 ```bash
-sudo dd if=/sys/kernel/debug/secure_ram/raw_storage \ bs=512 count=1 status=none | xxd
+sudo dd if=/sys/kernel/debug/secure_ram/raw_storage bs=512 count=1 status=none | xxd
 ```
 
 The plaintext does not appear in the backing storage, while the matching read through `/dev/secure_ram` returns it intact.
