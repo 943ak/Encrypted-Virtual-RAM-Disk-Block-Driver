@@ -341,7 +341,7 @@ Important limitations:
 
 ## Roadmap
 
-- [] Configurable RAM-disk size
+-  Configurable RAM-disk size
 - [.] Improved key management
 - [.] User-configurable keys supplied through a secure interface
 - [.] Encryption-key rotation
