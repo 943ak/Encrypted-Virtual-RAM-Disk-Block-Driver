@@ -119,7 +119,7 @@ sequenceDiagram
     Cry->>RAM: ciphertext sector
 ```
 
-### <h2 align"center">Read Path</h2>
+### <h2 align="center">Read Path</h2>
 
 For reads, the process runs in the opposite direction. Ciphertext is decrypted before the data is returned to the filesystem.
 
