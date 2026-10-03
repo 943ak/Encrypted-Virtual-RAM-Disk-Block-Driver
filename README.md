@@ -268,8 +268,8 @@ The encrypted RAM disk was benchmarked against the conventional filesystem insid
 
 | Workload | Conventional VM filesystem | Encrypted RAM disk |
 |---|---:|---:|
-| **Sequential write** | ~22.2 MiB/s | **~190 MiB/s** |
-| **Sequential read** | ~29.2 MiB/s | **~250 MiB/s** |
+| **Sequential write** | ~22.2mb/s ± ~5mb/s | **~190mb/s ± ~10mb/s** |
+| **Sequential read** | ~29.2mb/s ± ~5mb/s | **~250mb/s ± ~10mb/s** |
 
 > [!NOTE]
 > These numbers are specific to the development VM and benchmark configuration. They are **not** universal hardware-performance results, and results depend heavily on the host machine, VM configuration and workload. The encrypted RAM disk achieved substantially higher throughput in the tested workload, even though encryption adds extra CPU work.
@@ -307,13 +307,13 @@ Important limitations:
 
 ---
 
-## Advantages and Limitations
+## <h2 align="center">⚡ Advantages and Limitations</h2>
 
 <table>
 <tr>
 <td valign="top" width="50%">
 
-###            Advantages
+###<h3 align="center">✅ Advantages</h3>
 
 - Very low storage latency compared with the tested VM filesystem
 - Temporary storage that does not persist across shutdown
@@ -324,7 +324,7 @@ Important limitations:
 </td>
 <td valign="top" width="50%">
 
-###            Limitations
+###<h3 align="center">⚠️ Limitations</h3>
 
 - Capacity is currently limited to 16 MiB, can be increased as per future needs
 - Data is lost when the RAM-backed storage is destroyed
@@ -342,57 +342,18 @@ Important limitations:
 ## Roadmap
 
 -  Configurable RAM-disk size
-- [.] Improved key management
-- [.] User-configurable keys supplied through a secure interface
-- [.] Encryption-key rotation
-- [.] Integrity / authentication mechanisms
-- [.] Additional block-device statistics
-- [.] More sophisticated concurrency and queue management
-- [.] Configurable sector / block sizes
-- [.] Automated test suites
-- [.] Extended benchmarking across multiple workloads
-- [.] Support for additional filesystem configurations
+-  Improved key management
+-  User-configurable keys supplied through a secure interface
+-  Encryption-key rotation
+-  Integrity / authentication mechanisms
+-  Additional block-device statistics
+-  More sophisticated concurrency and queue management
+-  Configurable sector / block sizes
+-  Automated test suites
+-  Extended benchmarking across multiple workloads
+-  Support for additional filesystem configurations
 
 ---
-<!--  -->
-<!-- ## Project Status -->
-<!--  -->
-<!-- | Component | Status | -->
-<!-- |---|:---:| -->
-<!-- | Kernel module | ✅ | -->
-<!-- | RAM-backed storage | ✅ | -->
-<!-- | Virtual block device | ✅ | -->
-<!-- | `/dev/secure_ram` | ✅ | -->
-<!-- | BIO-based read/write handling | ✅ | -->
-<!-- | ext4 filesystem integration | ✅ | -->
-<!-- | AES-XTS encryption | ✅ | -->
-<!-- | Transparent decryption | ✅ | -->
-<!-- | Ciphertext verification | ✅ | -->
-<!-- | Large-file integrity testing | ✅ | -->
-<!-- | Performance benchmarking | ✅ | -->
-<!-- | Documentation | 🔄 | -->
-<!--  -->
-<!-- --- -->
-<!--  -->
-<!-- ## Repository Structure -->
-<!--  -->
-<!-- ``` -->
-<!-- Encrypted-Virtual-RAM-Disk-Block-Driver/ -->
-<!-- │ -->
-<!-- ├── secure_ram.c        # Kernel module source -->
-<!-- ├── Makefile            # kbuild build rules -->
-<!-- ├── .gitignore          # Excludes generated kernel build artifacts -->
-<!-- ├── README.md -->
-<!-- │ -->
-<!-- ├── docs/ -->
-<!-- │   └── architecture/ -->
-<!-- │ -->
-<!-- ├── tests/ -->
-<!-- ├── results/ -->
-<!-- └── screenshots/ -->
-<!-- ``` -->
-<!--  -->
-<!-- --- -->
 
 ## Technologies Used
 
