@@ -326,7 +326,7 @@ Important limitations:
 
 ###            Limitations
 
-- Capacity is currently limited to 16 MiB
+- Capacity is currently limited to 16 MiB, can be increased as per future needs
 - Data is lost when the RAM-backed storage is destroyed
 - A prototype, not a replacement for mature storage-encryption systems
 - Key management is simplified
@@ -341,58 +341,58 @@ Important limitations:
 
 ## Roadmap
 
-- [ ] Configurable RAM-disk size
-- [ ] Improved key management
-- [ ] User-configurable keys supplied through a secure interface
-- [ ] Encryption-key rotation
-- [ ] Integrity / authentication mechanisms
-- [ ] Additional block-device statistics
-- [ ] More sophisticated concurrency and queue management
-- [ ] Configurable sector / block sizes
-- [ ] Automated test suites
-- [ ] Extended benchmarking across multiple workloads
-- [ ] Support for additional filesystem configurations
+- [.] Configurable RAM-disk size
+- [.] Improved key management
+- [.] User-configurable keys supplied through a secure interface
+- [.] Encryption-key rotation
+- [.] Integrity / authentication mechanisms
+- [.] Additional block-device statistics
+- [.] More sophisticated concurrency and queue management
+- [.] Configurable sector / block sizes
+- [.] Automated test suites
+- [.] Extended benchmarking across multiple workloads
+- [.] Support for additional filesystem configurations
 
 ---
-
-## Project Status
-
-| Component | Status |
-|---|:---:|
-| Kernel module | ✅ |
-| RAM-backed storage | ✅ |
-| Virtual block device | ✅ |
-| `/dev/secure_ram` | ✅ |
-| BIO-based read/write handling | ✅ |
-| ext4 filesystem integration | ✅ |
-| AES-XTS encryption | ✅ |
-| Transparent decryption | ✅ |
-| Ciphertext verification | ✅ |
-| Large-file integrity testing | ✅ |
-| Performance benchmarking | ✅ |
-| Documentation | 🔄 |
-
----
-
-## Repository Structure
-
-```
-Encrypted-Virtual-RAM-Disk-Block-Driver/
-│
-├── secure_ram.c        # Kernel module source
-├── Makefile            # kbuild build rules
-├── .gitignore          # Excludes generated kernel build artifacts
-├── README.md
-│
-├── docs/
-│   └── architecture/
-│
-├── tests/
-├── results/
-└── screenshots/
-```
-
----
+<!--  -->
+<!-- ## Project Status -->
+<!--  -->
+<!-- | Component | Status | -->
+<!-- |---|:---:| -->
+<!-- | Kernel module | ✅ | -->
+<!-- | RAM-backed storage | ✅ | -->
+<!-- | Virtual block device | ✅ | -->
+<!-- | `/dev/secure_ram` | ✅ | -->
+<!-- | BIO-based read/write handling | ✅ | -->
+<!-- | ext4 filesystem integration | ✅ | -->
+<!-- | AES-XTS encryption | ✅ | -->
+<!-- | Transparent decryption | ✅ | -->
+<!-- | Ciphertext verification | ✅ | -->
+<!-- | Large-file integrity testing | ✅ | -->
+<!-- | Performance benchmarking | ✅ | -->
+<!-- | Documentation | 🔄 | -->
+<!--  -->
+<!-- --- -->
+<!--  -->
+<!-- ## Repository Structure -->
+<!--  -->
+<!-- ``` -->
+<!-- Encrypted-Virtual-RAM-Disk-Block-Driver/ -->
+<!-- │ -->
+<!-- ├── secure_ram.c        # Kernel module source -->
+<!-- ├── Makefile            # kbuild build rules -->
+<!-- ├── .gitignore          # Excludes generated kernel build artifacts -->
+<!-- ├── README.md -->
+<!-- │ -->
+<!-- ├── docs/ -->
+<!-- │   └── architecture/ -->
+<!-- │ -->
+<!-- ├── tests/ -->
+<!-- ├── results/ -->
+<!-- └── screenshots/ -->
+<!-- ``` -->
+<!--  -->
+<!-- --- -->
 
 ## Technologies Used
 
