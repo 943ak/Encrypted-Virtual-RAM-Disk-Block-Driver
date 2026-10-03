@@ -325,7 +325,7 @@ Important limitations:
 </td>
 <td valign="top" width="50%">
 
-### <h3 align="center">⚠️Limitations</h3>
+### <h3 align="center">Limitations</h3>
 
 - Capacity is currently limited to 16 MiB, can be increased as per future needs
 - Data is lost when the RAM-backed storage is destroyed
