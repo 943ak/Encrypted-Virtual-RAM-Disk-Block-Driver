@@ -268,8 +268,8 @@ The encrypted RAM disk was benchmarked against the conventional filesystem insid
 
 | Workload | Conventional VM filesystem | Encrypted RAM disk |
 |---|---:|---:|
-| **Sequential write** | ~22.2mb/s ± ~5mb/s | **~190mb/s ± ~10mb/s** |
-| **Sequential read** | ~29.2mb/s ± ~5mb/s | **~250mb/s ± ~10mb/s** |
+| **Sequential write** | ~22.2mb/s ± 5mb/s | **~190mb/s ± 10mb/s** |
+| **Sequential read** | ~29.2mb/s ± 5mb/s | **~250mb/s ± 10mb/s** |
 
 > [!NOTE]
 > These numbers are specific to the development VM and benchmark configuration. They are **not** universal hardware-performance results, and results depend heavily on the host machine, VM configuration and workload. The encrypted RAM disk achieved substantially higher throughput in the tested workload, even though encryption adds extra CPU work.
@@ -313,7 +313,7 @@ Important limitations:
 <tr>
 <td valign="top" width="50%">
 
-###<h3 align="center">✅ Advantages</h3>
+### <h3 align="center">Advantages</h3>
 
 - Very low storage latency compared with the tested VM filesystem
 - Temporary storage that does not persist across shutdown
@@ -324,7 +324,7 @@ Important limitations:
 </td>
 <td valign="top" width="50%">
 
-###<h3 align="center">⚠️ Limitations</h3>
+### <h3 align="center">⚠️Limitations</h3>
 
 - Capacity is currently limited to 16 MiB, can be increased as per future needs
 - Data is lost when the RAM-backed storage is destroyed
