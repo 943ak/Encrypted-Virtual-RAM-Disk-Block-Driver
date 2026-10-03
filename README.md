@@ -25,7 +25,8 @@
 
 ---
 
-## Overview
+## <h2 align="center">Overview</h2>
+
 
 Traditional storage devices keep their contents on persistent media such as SSDs or HDDs. A RAM disk takes the opposite approach and uses volatile system memory as storage.
 
@@ -33,7 +34,7 @@ This project extends that idea by building an **encrypted RAM-backed block devic
 
 Linux treats the region of RAM as a normal block device, so you can format it with a standard filesystem such as ext4, mount it, and use it with ordinary file operations, without applications ever handling encryption themselves.
 
-### At a Glance
+### <h2 align="center">At a Glance</h2>
 
 | | |
 |---|---|
@@ -46,7 +47,7 @@ Linux treats the region of RAM as a normal block device, so you can format it wi
 | **Filesystem** | ext4 |
 | **Debug interface** | Read-only debugfs: `/sys/kernel/debug/secure_ram/raw_storage` |
 
-### Objectives
+### <h2 align="center">Objectives</h2>
 
 - Implement a custom Linux kernel module
 - Create a RAM-backed virtual block device and expose it as `/dev/secure_ram`
@@ -59,7 +60,7 @@ Linux treats the region of RAM as a normal block device, so you can format it wi
 
 ---
 
-## Key Features
+## <h2 align="center">Key Features</h2>
 
 | Feature | Details |
 |---|---|
@@ -73,7 +74,7 @@ Linux treats the region of RAM as a normal block device, so you can format it wi
 
 ---
 
-## Architecture
+## <h2 align="center">Architecture</h2>
 
 ```mermaid
 flowchart TB
@@ -96,7 +97,7 @@ flowchart TB
     H --> I
 ```
 
-### Write Path
+### <h2 align="center">Write Path</h2>
 
 When an application writes a file, plaintext travels down through the filesystem and block layer, is encrypted sector by sector, and lands in RAM as ciphertext.
 
@@ -118,7 +119,7 @@ sequenceDiagram
     Cry->>RAM: ciphertext sector
 ```
 
-### Read Path
+### <h2 align"center">Read Path</h2>
 
 For reads, the process runs in the opposite direction. Ciphertext is decrypted before the data is returned to the filesystem.
 
@@ -147,7 +148,7 @@ sequenceDiagram
 
 ---
 
-## Quick Start
+## <h2 align="center">Quick Start</h2>
 
 ### Requirements
 
@@ -212,7 +213,7 @@ sudo rmmod secure_ram
 
 ---
 
-## Encryption Verification
+## <h2 align="center">Encryption Verification</h2>
 
 The encryption was verified using a known plaintext and direct inspection of the RAM-backed storage.
 
@@ -237,7 +238,7 @@ The plaintext does not appear in the backing storage, while the matching read th
 
 ---
 
-## Testing
+## <h2 align="center">Testing</h2>
 
 | Test | Method | Validates |
 |---|---|---|
@@ -262,7 +263,7 @@ The plaintext does not appear in the backing storage, while the matching read th
 
 ---
 
-## Performance
+## <h2 align="center">Performance</h2>
 
 The encrypted RAM disk was benchmarked against the conventional filesystem inside the development VM using [`fio`](https://github.com/axboe/fio).
 
@@ -276,7 +277,7 @@ The encrypted RAM disk was benchmarked against the conventional filesystem insid
 
 ---
 
-## Data Volatility
+## <h2 align="center">Data Volatility</h2>
 
 The storage is intentionally volatile. RAM is the backing store, not persistent media.
 
@@ -290,7 +291,7 @@ The project source code and compiled module stored on the VM's persistent virtua
 
 ---
 
-## Security Considerations
+## <h2 align="center">Security Considerations</h2>
 
 The encryption subsystem protects the **confidentiality** of data stored in the RAM-backed block storage. The project uses AES-XTS through the Linux Kernel Crypto API instead of implementing AES manually.
 
@@ -307,7 +308,7 @@ Important limitations:
 
 ---
 
-## <h2 align="center">⚡ Advantages and Limitations</h2>
+## <h2 align="center">Advantages and Limitations</h2>
 
 <table>
 <tr>
@@ -339,7 +340,7 @@ Important limitations:
 
 ---
 
-## Roadmap
+## <h2 align="center">Roadmap</h2>
 
 -  Configurable RAM-disk size
 -  Improved key management
@@ -355,7 +356,7 @@ Important limitations:
 
 ---
 
-## Technologies Used
+## <h2 align="center">Technologies Used</h2>
 
 | Area | Technologies |
 |---|---|
@@ -368,7 +369,7 @@ Important limitations:
 
 ---
 
-## Disclaimer
+## <h2 align="center">Disclaimer</h2>
 
 This project was developed as an academic Linux systems and storage capstone. It demonstrates the principles of:
 
